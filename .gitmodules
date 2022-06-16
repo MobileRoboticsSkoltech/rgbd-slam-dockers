@@ -2,3 +2,6 @@
 	path = orb-slam3/ORB_SLAM3
 	url = https://github.com/vnmsklnk/ORB_SLAM3
 	branch = TwoVIew
+[submodule "bundle-fusion/BundleFusionUbuntu"]
+	path = bundle-fusion/BundleFusionUbuntu
+	url = https://github.com/MobileRoboticsSkoltech/BundleFusionUbuntu.git
