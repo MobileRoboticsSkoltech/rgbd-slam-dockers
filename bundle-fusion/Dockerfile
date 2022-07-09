@@ -4,9 +4,8 @@ ARG DEBIAN_FRONTEND=noninteractive
 
 ENV PROJECT_DIR="/BundleFusion/"
 
-RUN apt-get update
-
-RUN apt-get --no-install-recommends install -y \
+RUN apt-get update \
+	&& apt-get --no-install-recommends install -y \
 	build-essential \
 	cmake \
 	git \
