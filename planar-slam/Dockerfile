@@ -70,5 +70,8 @@ COPY PlanarSLAM $PROJECT_DIR
 # Hack not to freeze build on systems with less kernels (slows down build a little) 
 RUN sed -i "s/make -j/make/g" PlanarSLAM/build.sh
 
+# Enabling debug mode
+RUN sed -i "s/Release/Debug/g" PlanarSLAM/build.sh
+
 RUN cd $PROJECT_DIR \
 	&& ./build.sh
