@@ -33,11 +33,12 @@ RUN git clone https://github.com/stevenlovegrove/Pangolin.git \
 COPY ORB_SLAM3 $PROJECT_DIR
 
 # Dirty hack to low OpenCV requirements
-RUN sed -i "s/find_package(OpenCV 4.4)/find_package(OpenCV 4.2)/g" ORB_SLAM3/CMakeLists.txt
+RUN sed -i "s/find_package(OpenCV 4.4)/find_package(OpenCV 4.2)/g" $PROJECT_DIR/CMakeLists.txt
 
 # Hack not to freeze build on systems with less kernels (slows down build a little) 
-RUN sed -i "s/make -j4/make/g" ORB_SLAM3/build.sh
+RUN sed -i "s/make -j4/make/g" $PROJECT_DIR/build.sh
 
 RUN cd $PROJECT_DIR \
-	&& ./build.sh
+	&& ./build.sh \
+	&& ldconfig
 
