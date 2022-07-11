@@ -7,4 +7,5 @@
 	url = https://github.com/MobileRoboticsSkoltech/BundleFusionUbuntu.git
 [submodule "planar-slam/PlanarSLAM"]
 	path = planar-slam/PlanarSLAM
-	url = https://github.com/yanyan-li/PlanarSLAM.git
+	url = https://github.com/vnmsklnk/PlanarSLAM.git
+	branch = shape&DMF_from_config
