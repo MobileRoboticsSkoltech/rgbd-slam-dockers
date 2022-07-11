@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 
 ARG DEBIAN_FRONTEND=noninteractive
 
@@ -57,7 +57,7 @@ RUN git clone https://github.com/opencv/opencv.git \
 # Build Pangolin for visualization
 RUN git clone https://github.com/stevenlovegrove/Pangolin.git \
 	&& cd Pangolin \
-	&& git checkout v0.5 \
+	&& git checkout v0.6 \
 	&& mkdir build \
 	&& cd build \
 	&& cmake -D CMAKE_BUILD_TYPE=Release .. \
@@ -67,10 +67,13 @@ RUN git clone https://github.com/stevenlovegrove/Pangolin.git \
 COPY PlanarSLAM $PROJECT_DIR
 
 # Hack not to freeze build on systems with less kernels (slows down build a little) 
-RUN sed -i "s/make -j/make/g" PlanarSLAM/build.sh
+RUN sed -i "s/make -j/make/g" $PROJECT_DIR/build.sh
 
 # Enabling debug mode
-RUN sed -i "s/Release/Debug/g" PlanarSLAM/build.sh
+RUN sed -i "s/Release/Debug/g" $PROJECT_DIR/build.sh
+
+# Hack for successful build on Ubuntu 20.04
+RUN sed -i "s/const KeyFrame\*/KeyFrame *const/g" $PROJECT_DIR/include/LoopClosing.h
 
 RUN cd $PROJECT_DIR \
 	&& ./build.sh
