@@ -9,3 +9,7 @@
 	path = planar-slam/PlanarSLAM
 	url = https://github.com/vnmsklnk/PlanarSLAM.git
 	branch = shape&DMF_from_config
+[submodule "dvo-slam/DVO-SLAM"]
+	path = dvo-slam/DVO-SLAM
+	url = https://github.com/vnmsklnk/docker_dvo_slam.git
+	branch = fixes
