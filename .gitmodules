@@ -13,3 +13,6 @@
 	path = dvo-slam/DVO-SLAM
 	url = https://github.com/vnmsklnk/docker_dvo_slam.git
 	branch = fixes
+[submodule "droid-slam/DROID_SLAM"]
+	path = droid-slam/DROID_SLAM
+	url = https://github.com/KonstantinPakulev/DROID-SLAM.git
