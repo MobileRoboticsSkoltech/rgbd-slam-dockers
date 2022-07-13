@@ -1,23 +1,33 @@
 # ORB-SLAM3 Docker image
+This repo contains ready Dockerfile for building ORB-SLAM3 image. You can use original version or modification for working with two cameras simultaneously.
 
 ## Building and launching Docker image
 
 At first you need to build Docker image.
 ```
 cd PATH_TO_REPOSITORY/orb-slam3
-sudo docker build -t NAME:TAG .
+docker build -t orb3:latest .
 ```
 
 Then you can run Docker image with this command:
 ```
-sudo docker run -it --rm -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix  --net=host --privileged --mount src=PATH_TO_YOUR_LOCAL_DATA,target=/dataset,type=bind NAME:TAG
+docker run -it --rm --net=host -e DISPLAY=$DISPLAY \
+           -v PATH_TO_YOUR_LOCAL_DATA:/dataset orb3:latest
 ```
 
 ## Using Docker image
 
 Now you can run ORB-SLAM3.
+
+For **one-view** version use:
 ```
-ORB_SLAM3/Examples/RGB-D/rgbd_tum ORB_SLAM3/Vocabulary/ORBvoc.txt dataset/PATH_TO_SETTINGS_YAML_FILE dataset dataset/PATH_TO_ASSOCIATIONS_FILE
+/ORB_SLAM3/Examples/RGB-D/rgbd_tum /ORB_SLAM3/Vocabulary/ORBvoc.txt \
+/dataset/SETTINGS_YAML_FILE /dataset /dataset/ASSOCIATIONS_FILE
+```
+For **two-view** version use:
+```
+/ORB_SLAM3/Examples/RGB-D-Two-View/rgbd_tum_tw /ORB_SLAM3/Vocabulary/ORBvoc.txt \
+/dataset/SETTINGS_YAML_FILE /dataset /dataset/ASSOCIATIONS_FILE
 ```
 
 ## Editing startup parameters
