@@ -13,4 +13,4 @@ Then you can follow the [original instructions](https://github.com/vnmsklnk/dock
 
 ## Editing startup parameters
 
-Our modification of DVO-SLAM supports editing intrinsic camera parameters by editing `docker_dvo_slam/dvo_benchmark/launch/benchmark.launch`.
+Our modification of DVO-SLAM supports modification of intrinsic camera parameters by editing `docker_dvo_slam/dvo_benchmark/launch/benchmark.launch`.
