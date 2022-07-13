@@ -1,5 +1,5 @@
 # ORB-SLAM3 Docker image
-This repo contains ready Dockerfile for building ORB-SLAM3 image. You can use original version or modification for working with two cameras simultaneously.
+This repo contains ready Dockerfile for building ORB-SLAM3 image. It supports original ORB-SLAM3 version as well as our modification with 2 RGB-D cameras support.
 
 ## Building and launching Docker image
 
