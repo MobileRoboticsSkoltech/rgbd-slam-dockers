@@ -25,5 +25,6 @@ RUN cd $PROJECT_DIR \
 	&& pip install evo --upgrade --no-binary evo \
 	&& pip install gdown \
 	&& python setup.py install \
-	&& wget -O droid.pth "https://drive.google.com/uc?export=download&id=1PpqVt1H4maBa_GbPJp4NwxRsd9jk-elh"
+	&& wget -O droid.pth "https://drive.google.com/uc?export=download&id=1PpqVt1H4maBa_GbPJp4NwxRsd9jk-elh" \
+	&& cp droid.pth evaluation_scripts
 
